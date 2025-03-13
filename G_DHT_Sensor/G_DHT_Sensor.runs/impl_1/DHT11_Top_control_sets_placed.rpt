@@ -1,0 +1,92 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Tue Mar 11 14:45:10 2025
+| Host         : HP-Tugba running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file DHT11_Top_control_sets_placed.rpt
+| Design       : DHT11_Top
+| Device       : xc7a35t
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    14 |
+|    Minimum number of control sets                        |    14 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    47 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    14 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              60 |           28 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              75 |           21 |
+| Yes          | No                    | No                     |              35 |           15 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              47 |           14 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+--------------------------------------------+----------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                Enable Signal               |            Set/Reset Signal            | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+--------------------------------------------+----------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | UART_TX_inst/tx_o_i_1_n_0                  |                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | DHT11_reader_inst/counter[31]_i_2_n_0      |                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | DHT11_reader_inst/j[5]_i_2_n_0             | DHT11_reader_inst/j[5]_i_1_n_0         |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG | UART_TX_inst/shreg[6]_i_1_n_0              |                                        |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | DHT11_reader_inst/bit_counter[6]_i_1_n_0   |                                        |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG | DHT11_reader_inst/high_time_r[7]_i_1_n_0   |                                        |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | Seven_Segment_Display_inst/seg_clk_reg_n_0 | Seven_Segment_Display_inst/sayac_clock |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG | UART_TX_inst/bittimer[10]_i_1_n_0          |                                        |                5 |             11 |         2.20 |
+|  clk_IBUF_BUFG | DHT11_reader_inst/p_0_in__0                |                                        |                3 |             12 |         4.00 |
+|  clk_IBUF_BUFG |                                            | Seven_Segment_Display_inst/seg_clk     |                5 |             17 |         3.40 |
+|  clk_IBUF_BUFG |                                            | p_0_in                                 |                8 |             26 |         3.25 |
+|  clk_IBUF_BUFG | DHT11_reader_inst/counter[31]_i_2_n_0      | DHT11_reader_inst/counter[31]_i_1_n_0  |                8 |             31 |         3.88 |
+|  clk_IBUF_BUFG |                                            | DHT11_reader_inst/p_0_in               |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG |                                            |                                        |               28 |             60 |         2.14 |
++----------------+--------------------------------------------+----------------------------------------+------------------+----------------+--------------+
+
+
